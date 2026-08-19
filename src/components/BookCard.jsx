@@ -1,35 +1,48 @@
-
+import Image from "next/image";
 import Link from "next/link";
 
 const BookCard = ({ book }) => {
-  return (
-    <div className="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+    const { id, name, description, image, price } = book;
 
-      {/* Book Icon */}
-      <div className="mb-5 flex h-40 items-center justify-center rounded-xl bg-blue-50">
-        <span className="text-7xl">📖</span>
-      </div>
+    return (
+        <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-xl   mx-auto ">
+            
+            {/* Book Image */}
+            <div className=" w-full h-64 mx-auto flex justify-center items-center">
+                <Image
+                    src={image}
+                    alt={name}
+                    height={200} width={200}
+                />
+            </div>
 
-      {/* Book Info */}
-      <h2 className="text-xl font-bold text-gray-900">
-        {book.name}
-      </h2>
+            {/* Book Info */}
+            <div className="p-5">
+                <h2 className="text-xl font-bold text-gray-800 mb-2">
+                    {name}
+                </h2>
 
-      <p className="mt-3 line-clamp-2 text-sm leading-6 text-gray-600">
-        {book.description}
-      </p>
+                <p className="text-gray-600 text-sm line-clamp-3 mb-4">
+                    {description}
+                </p>
 
-      {/* Button */}
-      <Link
-        href={`/books/${book.id}`}
-        className="mt-6 inline-block rounded-lg bg-blue-600 px-4 py-2.5 text-center font-medium text-white transition hover:bg-blue-700"
-      >
-        View Details
-      </Link>
+                {/* Price */}
+                <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-bold text-blue-600">
+                        ৳{price}
+                    </span>
+                </div>
 
-    </div>
-  );
+                {/* Button */}
+                <Link
+                    href={`/books/${id}`}
+                    className="block text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                    View Details
+                </Link>
+            </div>
+        </div>
+    );
 };
 
 export default BookCard;
-
