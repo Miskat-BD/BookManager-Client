@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-      <div className="mx-auto flex min-h-[600px] max-w-7xl items-center px-6 py-16">
+    <section className="bg-linear-to-br from-blue-50 via-white to-indigo-50">
+      <div className="mx-auto flex min-h-150 max-w-7xl items-center px-6 py-16">
         <div className="grid w-full items-center gap-12 md:grid-cols-2">
 
           {/* Left Content */}
@@ -63,7 +63,7 @@ const Hero = () => {
 
           {/* Right Side */}
           <div className="flex justify-center">
-            <div className="relative flex h-[400px] w-full max-w-md items-center justify-center rounded-3xl bg-blue-600 p-8 shadow-2xl">
+            <div className="relative flex h-100 w-full max-w-md items-center justify-center rounded-3xl bg-blue-600 p-8 shadow-2xl">
 
               {/* Decorative circles */}
               <div className="absolute -right-5 -top-5 h-24 w-24 rounded-full bg-indigo-300 opacity-60" />

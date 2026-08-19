@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="border-b bg-white">
+    <nav className="border-b bg-white mb-5">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
 
         {/* Logo */}
@@ -27,6 +27,13 @@ const Navbar = () => {
             className="font-medium text-gray-700 hover:text-blue-600"
           >
             All Books
+          </Link>
+
+          <Link
+            href="/add-books"
+            className="font-medium text-gray-700 hover:text-blue-600"
+          >
+            Add Books
           </Link>
 
           <Link
