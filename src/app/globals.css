@@ -1,2 +1,17 @@
 @import "tailwindcss";
 @import "@heroui/styles"; 
+
+/* কাস্টম মারকুই অ্যানিমেশন কিফ্রেম */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* টেলউইন্ড সাপোর্ট করার জন্য কাস্টম ইউটিলিটি ক্লাস */
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
