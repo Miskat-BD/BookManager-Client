@@ -1,3 +1,5 @@
+import { ArrowDown } from "@gravity-ui/icons";
+
 const baseURL = process.env.NEXT_PUBLIC_BACKEND_API
 
 export const getBooks = async () => {
@@ -20,5 +22,26 @@ export const addBook = async (data) => {
         body: JSON.stringify(data)
     })
 
+    return res.json()
+}
+
+export const updateBook = async (id, data) => {
+    const res = await fetch(`${baseURL}/books/${id}`, {
+        method: "PATCH",
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    return res.json()
+}
+
+export const deleteBook = async (id) => {
+    const res = await fetch(`${baseURL}/books/${id}`, {
+        method: "DELETE",
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
     return res.json()
 }
